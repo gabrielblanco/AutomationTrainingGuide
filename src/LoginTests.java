@@ -1,27 +1,17 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.*;
-
-import java.net.MalformedURLException;
-
 import static org.testng.Assert.assertEquals;
 
 public class LoginTests extends BaseTest {
 
-    /**
-     * Variables.
-     */
+    // Variables
     private WebDriver driver;
     private String baseUrl;
     private BasePage basePage;
 
-    /**
-     * Locators
-     */
+    // Locators
     By byLoginLink = By.id("ctl00_LoginView_LoginLink");
     By byLoginTitle = By.tagName("h2");
     By byUsernameInput = By.id("ctl00_Main_LoginConrol_UserName");
@@ -43,12 +33,7 @@ public class LoginTests extends BaseTest {
     @BeforeMethod
     void setUp(){
         System.out.println("Creating Driver");
-//        driver = createLocalDriver("chrome");
-        try {
-            driver = createRemoteDriver("chrome");
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
+        driver = createDriver("local", "chrome");
         baseUrl = "http://qa-trainingw7:86/";
         basePage = new BasePage(driver);
         basePage.getBaseUrl(baseUrl);
@@ -87,21 +72,20 @@ public class LoginTests extends BaseTest {
         assertEquals(basePage.getTextFromElement(loginErrorMsg), "Your login attempt was not successful. Please try again.");
     }
 
-    /**
-     * Tears down the driver after execution finized.
-     * @throws Exception
-     */
+    // Tears down the driver after execution finalize.
     @AfterMethod
     public void tearDown() throws Exception {
         System.out.println("Deleting Driver");
         driver.quit();
     }
 
+    // Prints a message when the class execution ends.
     @AfterClass
     void afterClassAlert(){
         System.out.println("Completing execution class: LoginTests");
     }
 
+    // Prints a message when the test execution ends.
     @AfterTest
     void afterTestAlert(){
         System.out.println("Completing Execution");

@@ -1,24 +1,17 @@
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
-
 import static org.testng.Assert.assertEquals;
 
 public class RegisterTests extends BaseTest {
 
-    /**
-     * Variables.
-     */
+    // Variables.
     private WebDriver driver;
     private String baseUrl;
     private BasePage basePage;
 
-    /**
-     * Locators
-     * */
+    // Locators
     By byRegisterLink = By.id("ctl00_LoginView_RegisterLink");
     By byRegisterTitle = By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Create an Account'])[1]/following::h3[1]");
     By bySubmitButton = By.id("ctl00_Main_CreateUserWizardControl___CustomNav0_StepNextButtonButton");
@@ -54,7 +47,7 @@ public class RegisterTests extends BaseTest {
     @BeforeMethod
     void setUp(){
         System.out.println("Creating Driver");
-        driver = createLocalDriver("chrome");
+        driver = createDriver("remote", "chrome");
         baseUrl = "http://qa-trainingw7:86/";
         basePage = new BasePage(driver);
         basePage.getBaseUrl(baseUrl);
@@ -62,20 +55,14 @@ public class RegisterTests extends BaseTest {
         basePage.clickOnElement(registerLink);
     }
 
-    /**
-     * Steps to check test case requirements.
-     * @throws Exception
-     */
+    // Steps to check test case requirements.
     @Test
     public void testVerifyTheRegisterPageIsDisplayedCorrectlyWhenClickingOnRegisterLink() throws Exception {
         WebElement registerTitle = basePage.findElement(byRegisterTitle);
         assertEquals(basePage.getTextFromElement(registerTitle), "Registration");
     }
 
-    /**
-     * Steps to check test case requirements.
-     * @throws Exception
-     */
+    // Steps to check test case requirements.
     @Test
     public void testVerifyAllTheMandatoryMessagesAreDisplayedWhenLeavingEmptyAllTheMandatoryFieldsAndClickingOnSubmitButton() throws Exception {
         WebElement submitButton = basePage.findElement(bySubmitButton);
@@ -88,7 +75,6 @@ public class RegisterTests extends BaseTest {
         WebElement errorConfirmPassword = basePage.findElement(byErrorConfirmPassword);
         WebElement errorQuestionRequired = basePage.findElement(byErrorQuestionRequired);
         WebElement errorAnswerRequired = basePage.findElement(byErrorAnswerRequired);
-        
         assertEquals(basePage.getTextFromElement(errorFirstName), "First name is required.");
         assertEquals(basePage.getTextFromElement(errorLastName), "Last name is required.");
         assertEquals(basePage.getTextFromElement(errorEmail), "Email is required.");
@@ -99,10 +85,7 @@ public class RegisterTests extends BaseTest {
         assertEquals(basePage.getTextFromElement(errorAnswerRequired), "Security answer is required.");
     }
 
-    /**
-     * Steps to check test case requirements.
-     * @throws Exception
-     */
+    // Steps to check test case requirements.
     @Test
     public void testVerifyAnErrorMessageIsDisplayedWhenCreatingAnUserWithAnUserNameThatIsAlreadyTaken() throws Exception {
         WebElement submitButton = basePage.findElement(bySubmitButton);
@@ -114,7 +97,6 @@ public class RegisterTests extends BaseTest {
         WebElement confirmPassword = basePage.findElement(byConfirmPassword);
         WebElement question = basePage.findElement(byQuestion);
         WebElement answer = basePage.findElement(byAnswer);
-
         basePage.typeOnElement(firstName, "Juan");
         basePage.typeOnElement(lastName, "Blanco");
         basePage.typeOnElement(email, "gabriel.blanco03@hotmail.com");
@@ -128,16 +110,12 @@ public class RegisterTests extends BaseTest {
         assertEquals(basePage.getTextFromElement(errorUserExist), "User name already exists. Please enter a different user name.");
     }
 
-    /**
-     * Steps to check test case requirements.
-     * @throws Exception
-     */
+    // Steps to check test case requirements.
     @Test
     public void testVerifyAnErrorMessageIsDisplayedWhenSendingADifferentPasswordOnPasswordAndConfirmPasswordFields() throws Exception {
         WebElement password = basePage.findElement(byPassword);
         WebElement confirmPassword = basePage.findElement(byConfirmPassword);
         WebElement submitButton = basePage.findElement(bySubmitButton);
-
         basePage.typeOnElement(password, "12345JGD");
         basePage.typeOnElement(confirmPassword, "123JGD");
         basePage.clickOnElement(submitButton);
@@ -145,10 +123,7 @@ public class RegisterTests extends BaseTest {
         assertEquals(basePage.getTextFromElement(errorPasswordNotMatch), "The password and confirmation password must match.");
     }
 
-    /**
-     * Tears down the driver after execution finized.
-     * @throws Exception
-     */
+    // Tears down the driver after execution finalize.
     @AfterMethod
     public void tearDown() throws Exception {
         System.out.println("Deleting Driver");

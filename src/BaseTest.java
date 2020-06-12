@@ -1,37 +1,37 @@
-import org.openqa.selenium.Platform;
-import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.CapabilityType;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import java.net.MalformedURLException;
 import java.net.URL;
 
 public class BaseTest {
 
-    /**
-     * Variables
-     * */
-    String baseUrl, nodeUrl;
-
-    /**
-     * Web driver
-     * */
+    // Web driver
     WebDriver driver;
 
-    /**
-     * Driver path variables
-     * */
+    // Driver path variables
     final String googleDriverPath = "resources/chromedriver.exe";
     final String firefoxDriverPath = "resources/geckodriver.exe";
-    final String binaryPath = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe";
+    final String nodeUrl = "http://192.168.189.169:42898/wd/hub";
 
-    /**
-     * Creates a local driver for the specified browser
-    */
+    // Allows to the user select the driver type of execution. Local or Remote.
+    public WebDriver createDriver(String executionType, String browserType){
+        try{
+            if (executionType.equals("local")){
+                driver = createLocalDriver(browserType);
+            } else if(executionType.equals("remote")){
+                driver = createRemoteDriver(browserType);
+            }
+        } catch (Exception e){
+            System.out.println("Execution type must be local or remote, you are sending: " + executionType);
+        }
+        return driver;
+    }
+
+    // Creates a local driver for the specified browser
     public WebDriver createLocalDriver(String browserType){
         try {
             if (browserType.equals("chrome")){
@@ -49,26 +49,16 @@ public class BaseTest {
         return driver;
     }
 
-    /**
-     * Creates a remote driver for the specified browser
-     * */
+    // Creates a remote driver for the specified browser
     public WebDriver createRemoteDriver(String browserType) throws MalformedURLException {
-        nodeUrl = "http://localhost:4444/wd/hub";
-        try {
-            if (browserType.equals("chrome")) {
-                System.setProperty("webdriver.chrome.driver", googleDriverPath);
-                ChromeOptions options = new ChromeOptions();
-                options.setBinary(binaryPath);
-                driver = new RemoteWebDriver(new URL(nodeUrl), options);
-            } else if (browserType.equals("firefox")){
-//                DesiredCapabilities capability = DesiredCapabilities.firefox();
-//                capability.setBrowserName(browserType);
-//                capability.setPlatform(Platform.WIN10);
-//                driver = new RemoteWebDriver(new URL(nodeUrl), capability);
-//                System.out.println("firefox");
+        try{
+            if (browserType.equals("chrome")){
+                driver = new RemoteWebDriver(new URL(nodeUrl), new ChromeOptions());
+            }else if (browserType.equals("Firefox")) {
+                driver = new RemoteWebDriver(new URL(nodeUrl), new FirefoxOptions());
             }
-        } catch (Exception e) {
-            System.out.println("Unable to load the browser: " + browserType + "\n" + e);
+        } catch (Exception e){
+            System.out.println("Unable to execute the " + browserType);
         }
         return driver;
     }

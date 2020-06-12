@@ -1,18 +1,20 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
 
+    // Web driver
     WebDriver driver;
 
+    // Constructor method
     public BasePage(WebDriver driver){
         this.driver = driver;
     }
 
+    // Get the base page URL
     public void getBaseUrl(String url) {
         try{
             driver.get(url);
@@ -21,6 +23,7 @@ public class BasePage {
         }
     }
 
+    // This method will type some text into a valid web element.
     public boolean typeOnElement(WebElement element, String text)
     {
         try {
@@ -36,6 +39,7 @@ public class BasePage {
         }
     }
 
+    // Returns the text from an specific web element
     public String getTextFromElement(WebElement element)
     {
         try{
@@ -49,6 +53,7 @@ public class BasePage {
         }
     }
 
+    // Returns a boolean value if the web element is clickable
     public boolean clickOnElement(WebElement element) {
         try{
             if (waitForElementEnabled(element)) {
@@ -62,6 +67,7 @@ public class BasePage {
         }
     }
 
+    // Validates if the web element is visible
     public boolean waitForElementVisible(WebElement element) {
         try{
             WebDriverWait wait = new WebDriverWait(driver, 10);
@@ -73,6 +79,7 @@ public class BasePage {
         }
     }
 
+    // Validates if a web element is enable
     public boolean waitForElementEnabled(WebElement element) {
         try{
             WebDriverWait wait = new WebDriverWait(driver, 10);
@@ -85,6 +92,7 @@ public class BasePage {
 
     }
 
+    // Validates if the web element is visible
     public boolean waitForElementNotVisible(WebElement element) {
         try{
             WebDriverWait wait = new WebDriverWait(driver, 10);
@@ -96,6 +104,7 @@ public class BasePage {
         }
     }
 
+    // Returns the web element related to an specific locator.
     public WebElement findElement(By element){
         return driver.findElement(element);
     }

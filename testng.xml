@@ -4,7 +4,7 @@
     <test verbose="2" preserve-order="true" name="C:/Users/gduran-as/IdeaProjects/AutomationStage4">
         <classes>
             <class name="LoginTests"/>
-<!--            <class name="RegisterTests"/>-->
+            <class name="RegisterTests"/>
         </classes>
     </test>
 </suite>
