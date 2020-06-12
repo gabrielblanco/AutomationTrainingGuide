@@ -6,9 +6,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.*;
 
+import java.net.MalformedURLException;
+
 import static org.testng.Assert.assertEquals;
 
-public class LoginTests {
+public class LoginTests extends BaseTest {
 
     /**
      * Variables.
@@ -41,9 +43,12 @@ public class LoginTests {
     @BeforeMethod
     void setUp(){
         System.out.println("Creating Driver");
-        final String googleDriverPath = "resources/chromedriver.exe";
-        System.setProperty("webdriver.chrome.driver", googleDriverPath);
-        driver = new ChromeDriver();
+//        driver = createLocalDriver("chrome");
+        try {
+            driver = createRemoteDriver("chrome");
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
         baseUrl = "http://qa-trainingw7:86/";
         basePage = new BasePage(driver);
         basePage.getBaseUrl(baseUrl);

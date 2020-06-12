@@ -7,7 +7,7 @@ import org.testng.annotations.*;
 
 import static org.testng.Assert.assertEquals;
 
-public class RegisterTests {
+public class RegisterTests extends BaseTest {
 
     /**
      * Variables.
@@ -54,9 +54,7 @@ public class RegisterTests {
     @BeforeMethod
     void setUp(){
         System.out.println("Creating Driver");
-        final String googleDriverPath = "resources/chromedriver.exe";
-        System.setProperty("webdriver.chrome.driver", googleDriverPath);
-        driver = new ChromeDriver();
+        driver = createLocalDriver("chrome");
         baseUrl = "http://qa-trainingw7:86/";
         basePage = new BasePage(driver);
         basePage.getBaseUrl(baseUrl);
