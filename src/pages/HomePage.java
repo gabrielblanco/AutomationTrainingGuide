@@ -27,7 +27,6 @@ public class HomePage extends BasePage {
     @FindBy(id = "ctl00_TopMenuRepeater_ctl00_MenuLink") WebElement homeLink;
     @FindBy(id = "ctl00_TopMenuRepeater_ctl01_MenuLink") WebElement postAndAdLink;
     @FindBy(id = "ctl00_TopMenuRepeater_ctl02_MenuLink") WebElement myAdsAndProfileLink;
-    @FindBy(id = "ctl00_Main_CategoryDropDown_CategoryList") WebElement searchDropdown;
 
     // Constructor method
     public HomePage (WebDriver driver) {
@@ -88,13 +87,15 @@ public class HomePage extends BasePage {
     }
 
     // Clicks over the Post An Ad menu item
-    public void clickOnPostAnAd(){
+    public PostAnAdPage clickOnPostAnAd(){
         clickOnElement(postAndAdLink);
+        return new PostAnAdPage(driver);
     }
 
     // Clicks over the My Ads & Profile menu item
-    public void clickOnMyAdsAndProfile(){
+    public MyAdsAndProfilePage clickOnMyAdsAndProfile(){
         clickOnElement(myAdsAndProfileLink);
+        return new MyAdsAndProfilePage(driver);
     }
 
     public String getTabTitle(){

@@ -75,45 +75,6 @@ public class HomeTest extends BaseTest{
 //        Assert.assertEquals(homePage.getSearchFocus(), "Auto");
 //    }
 
-    /**
-     * Post An Ad Test Cases
-     * */
-    // Verifies the Post An Add page is loading when click over the Post An Ad and the user is logged in.
-    @Test
-    public void verifyPostAnAdPageIsDisplayedWhenClickOverPostAnAddWithTheUserLogged(){
-        loginPage = homePage.clickOnLogin();
-        loginPage.logIn("gabrielduran", "258JGD#");
-        homePage.clickOnPostAnAd();
-        Assert.assertEquals(homePage.getTabTitle(), "Post an Ad");
-    }
-
-    // Verifies the Login Page is loading when click over the Post An Ad and the user is not logged.
-    @Test
-    public void verifyLoginPageIsDisplayedWhenClickOverPostAnAddWithoutTheUserLogged(){
-        homePage.clickOnPostAnAd();
-        loginPage = homePage.clickOnLogin();
-        Assert.assertTrue(loginPage.verifyLoads());
-    }
-
-    /**
-     * My Ads & Profile Test Cases
-     * */
-    // Verifies the My Ads & Profile page is displayed when click over the My Ads & Profile menu tab.
-    @Test
-    public void verifyMyAdsAndProfilePageIsDisplayedWhenClickOnMyAdsAndProfileNavMenu(){
-        homePage.clickOnMyAdsAndProfile();
-        loginPage.logIn("gabrielduran", "258JGD#");
-        Assert.assertEquals(homePage.getTabTitle(), "My Ads & Profile");
-    }
-
-    // Verifies the Login page is displayed when click over the My Ads & Profile menu tab when the user is not logged in.
-    @Test
-    public void verifyLoginPageWhenClickOnMyAdsAndProfileAndTheUserIsNotLogged(){
-        homePage.clickOnMyAdsAndProfile();
-        loginPage = homePage.clickOnLogin();
-        Assert.assertTrue(loginPage.verifyLoads());
-    }
-
     // Tears down the driver after execution finalize.
     @AfterMethod
     public void tearDown() {
