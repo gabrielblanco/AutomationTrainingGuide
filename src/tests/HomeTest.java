@@ -37,9 +37,6 @@ public class HomeTest extends BaseTest{
         homePage = new HomePage(driver);
     }
 
-    /**
-     * Home Page Test Cases
-     * */
     // Tis test case verify if the Home Page main elements are visible when loading the app
     @Test
     public void verifyHomePageLoad(){
@@ -52,28 +49,6 @@ public class HomeTest extends BaseTest{
         homePage.clickOnHome();
         Assert.assertTrue(homePage.verifyLoads());
     }
-
-    /**
-     * Categories Test Cases
-     * */
-    // Verifies the Antiques & Collectibles category is displayed on the Search view when click over the Antiques & Collectibles category
-//    @Test
-//    public void verifyAntiquesAndCollectiblesSearchViewWhenClickOverThatCategory(){
-//        homePage.clickOnCategory("Antiques & Collectibles");
-//        Assert.assertEquals(homePage.getSearchFocus(), "Antiques & Collectibles");
-//    }
-//
-//    // Verifies the Arts & Crafts category is displayed on the Search view when click over the Arts & Crafts category
-//    @Test
-//    public void verifyArtsAndCraftsSearchViewWhenClickOverThatCategory(){
-//        Assert.assertEquals(homePage.getSearchFocus(), "Arts & Crafts");
-//    }
-//
-//    // Verifies the Auto category is displayed on the Search view when click over the Auto category
-//    @Test
-//    public void verifyAutoSearchViewWhenClickOverThatCategory(){
-//        Assert.assertEquals(homePage.getSearchFocus(), "Auto");
-//    }
 
     // Tears down the driver after execution finalize.
     @AfterMethod

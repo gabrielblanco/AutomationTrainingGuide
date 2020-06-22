@@ -5,6 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
+
 public class HomePage extends BasePage {
 
     // Home page locators
@@ -28,10 +32,19 @@ public class HomePage extends BasePage {
     @FindBy(id = "ctl00_TopMenuRepeater_ctl01_MenuLink") WebElement postAndAdLink;
     @FindBy(id = "ctl00_TopMenuRepeater_ctl02_MenuLink") WebElement myAdsAndProfileLink;
 
+    List<WebElement> categories = new ArrayList<>();
+
     // Constructor method
     public HomePage (WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
+        categories.add(antiquesCatTitle);
+        categories.add(artsCatTitle);
+        categories.add(autoCatTitle);
+        categories.add(electronicsCatTitle);
+        categories.add(gardenCatTitle);
+        categories.add(homeCatTitle);
+        categories.add(musicCatTitle);
     }
 
     // Verifies if the main web elements have already loaded
@@ -100,5 +113,15 @@ public class HomePage extends BasePage {
 
     public String getTabTitle(){
         return getTextFromElement(tabTitle);
+    }
+
+    public CategoriesPage clickOnCategory(String category) {
+        for (WebElement cat : categories) {
+            if (category.equals(getTextFromElement(cat))) {
+                clickOnElement(cat);
+                break;
+            }
+        }
+        return new CategoriesPage(driver);
     }
 }
