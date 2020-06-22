@@ -2,9 +2,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="C:/Users/gduran-as/IdeaProjects/AutomationStage4">
+        <parameter name="baseUrl" value="http://qa-trainingw7:86/"/>
+        <parameter name="browserType" value="chrome"/>
+        <parameter name="executionType" value="local"/>
         <classes>
-            <class name="LoginTests"/>
-            <class name="RegisterTests"/>
+            <class name="tests.LoginTest"/>
+            <class name="tests.RegisterTest"/>
+            <class name="tests.HomeTest"/>
         </classes>
     </test>
 </suite>

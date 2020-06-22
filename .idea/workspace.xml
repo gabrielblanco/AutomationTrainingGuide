@@ -2,14 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ae719e2-558e-4b79-971a-edae43f733f4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/HomePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/LoginPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/RegisterPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/HomeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AutomationStage4/BaseTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AutomationStage4/BaseTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AutomationStage4/LoginTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AutomationStage4/LoginTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AutomationStage4/RegisterTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AutomationStage4/RegisterTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LoginTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoginTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RegisterTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RegisterTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AutomationStage4.iml" beforeDir="false" afterPath="$PROJECT_DIR$/AutomationStage5.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AutomationStage4/BasePage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AutomationStage4/BaseTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AutomationStage4/LoginTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AutomationStage4/RegisterTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/BasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoginTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/LoginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RegisterTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/RegisterTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,9 +36,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1ZtcidjvQCaqB3ZPUyhkaelxHWx" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -40,6 +50,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -51,7 +62,7 @@
   </component>
   <component name="RunManager" selected="TestNG.C:/Users/gduran-as/IdeaProjects/AutomationStage4/testng.xml">
     <configuration name="C:/Users/gduran-as/IdeaProjects/AutomationStage4/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="AutomationStage4" />
+      <module name="AutomationStage5" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
       <option name="TEST_OBJECT" value="SUITE" />
       <properties />
@@ -60,10 +71,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginTests" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="AutomationStage4" />
+    <configuration name="LoginTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="AutomationStage5" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="LoginTests" />
+      <option name="MAIN_CLASS_NAME" value="tests.LoginTest" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -71,10 +82,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginTests.verifyUserIsLoginWhenValidCredentials" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="AutomationStage4" />
+    <configuration name="LoginTest.verifyUserIsLoginWhenValidCredentials" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="AutomationStage5" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="LoginTests" />
+      <option name="MAIN_CLASS_NAME" value="tests.LoginTest" />
       <option name="METHOD_NAME" value="verifyUserIsLoginWhenValidCredentials" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
@@ -84,7 +95,7 @@
       </method>
     </configuration>
     <configuration name="&lt;default&gt;" type="TestNG" nameIsGenerated="true">
-      <module name="AutomationStage4" />
+      <module name="AutomationStage5" />
       <option name="SUITE_NAME" value="" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="" />
@@ -103,8 +114,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.C:/Users/gduran-as/IdeaProjects/AutomationStage4/testng.xml" />
-        <item itemvalue="TestNG.LoginTests.verifyUserIsLoginWhenValidCredentials" />
-        <item itemvalue="TestNG.LoginTests" />
+        <item itemvalue="TestNG.LoginTest.verifyUserIsLoginWhenValidCredentials" />
       </list>
     </recent_temporary>
   </component>
@@ -138,59 +148,64 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="669" y="154" key="#&lt;default&gt;/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1585662314051" />
+    <state x="2472" y="178" key="#Inspections" timestamp="1592576873321">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2472" y="178" key="#Inspections/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1592576873321" />
     <state x="2660" y="274" key="FileChooserDialogImpl" timestamp="1591400515680">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1585662235873" />
     <state x="2660" y="274" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1591400515680" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1591998273961">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591998273961" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1591992194620" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1591998273961">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591998273961" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1591992194620" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1591998273961">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591998273961" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1591992194620" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1591998273961">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591998273961" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1591992194620" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1591997213064">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591997213064" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1591989496961" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1591997213064">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591997213064" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1591989496961" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1591997213064">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591997213064" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1591989496961" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1591997213064">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591997213064" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1591989496961" />
-    <state x="440" y="94" key="SettingsEditor" timestamp="1585662244513">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1585662244513" />
-    <state x="2576" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1591978499054">
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1592603468637">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2576" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591822106612" />
-    <state x="2576" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1591978499054" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1592587743813" />
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1592603468637" />
+    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1592603468637">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1592587743813" />
+    <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1592603468637" />
+    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1592603468637">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1592587743813" />
+    <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1592603468637" />
+    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1592603468637">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1592587743813" />
+    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1592603468637" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1592603468637">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591997213064" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1592603468637" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1592603468637">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591997213064" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1592603468637" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1592603468637">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591997213064" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1592603468637" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1592603468637">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1591997213064" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1592603468637" />
+    <state x="2360" y="94" key="SettingsEditor" timestamp="1592496626099">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1585662244513" />
+    <state x="2360" y="94" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1592496626099" />
+    <state x="2576" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1592831774457">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2576" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1592337103004" />
+    <state x="2576" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1592831774457" />
   </component>
 </project>

@@ -1,3 +1,5 @@
+package pages;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -43,10 +45,7 @@ public class BasePage {
     public String getTextFromElement(WebElement element)
     {
         try{
-            if(waitForElementVisible(element)){
-                return element.getText();
-            }
-            return "";
+            return (waitForElementVisible(element)) ? element.getText() : "";
         } catch (Exception e) {
             System.out.println("Unable to get text from element.");
             return "";
