@@ -3,9 +3,10 @@ package tests;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
-import pages.BasePage;
 import pages.HomePage;
 import pages.LoginPage;
+import utilities.BaseTest;
+
 import static org.testng.Assert.*;
 
 public class LoginTest extends BaseTest {
@@ -30,10 +31,10 @@ public class LoginTest extends BaseTest {
 
     // Sets the driver up
     @BeforeMethod
-    @Parameters({"baseUrl", "browserType", "executionType"})
-    void setUp(String baseUrl, String browserType, String executionType){
+    @Parameters({"baseUrl", "browserType", "executionType", "nodeUrl"})
+    void setUp(String baseUrl, String browserType, String executionType, String nodeUrl){
         System.out.println("Creating Driver");
-        driver = createDriver(baseUrl, executionType, browserType);
+        driver = createDriver(baseUrl, executionType, browserType, nodeUrl);
         HomePage homePage = new HomePage(driver);
         loginPage = homePage.clickOnLogin();
     }

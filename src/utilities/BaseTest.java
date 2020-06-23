@@ -1,4 +1,4 @@
-package tests;
+package utilities;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -6,9 +6,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import pages.BasePage;
+import org.testng.annotations.*;
 
-import java.net.MalformedURLException;
 import java.net.URL;
 
 public class BaseTest {
@@ -19,16 +18,16 @@ public class BaseTest {
     // Driver path variables
     final String googleDriverPath = "resources/chromedriver.exe";
     final String firefoxDriverPath = "resources/geckodriver.exe";
-    final String nodeUrl = "http://192.168.189.169:11836/wd/hub";
 
     // Allows to the user select the driver type of execution. Local or Remote.
-    public WebDriver createDriver(String baseUrl, String executionType, String browserType){
+    @Parameters({"nodeUrl"})
+    public WebDriver createDriver(String baseUrl, String executionType, String browserType, String nodeUrl){
         try{
             if (executionType.equals("local")){
                 driver = createLocalDriver(browserType);
                 driver.get(baseUrl);
             } else if(executionType.equals("remote")){
-                driver = createRemoteDriver(browserType);
+                driver = createRemoteDriver(browserType, nodeUrl);
                 driver.get(baseUrl);
             }
         } catch (Exception e){
@@ -56,7 +55,7 @@ public class BaseTest {
     }
 
     // Creates a remote driver for the specified browser
-    public WebDriver createRemoteDriver(String browserType) throws MalformedURLException {
+    public WebDriver createRemoteDriver(String browserType, String nodeUrl) {
         try{
             if (browserType.equals("chrome")){
                 driver = new RemoteWebDriver(new URL(nodeUrl), new ChromeOptions());
@@ -68,4 +67,5 @@ public class BaseTest {
         }
         return driver;
     }
+
 }

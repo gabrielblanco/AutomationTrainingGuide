@@ -5,11 +5,12 @@
         <parameter name="baseUrl" value="http://qa-trainingw7:86/"/>
         <parameter name="browserType" value="chrome"/>
         <parameter name="executionType" value="local"/>
+        <parameter name="nodeUrl" value="http://192.168.189.169:47617/wd/hub"/>
         <classes>
-            <class name="tests.CategoriesTest"/>
-<!--            <class name="tests.HomeTest"/>-->
+<!--            <class name="tests.CategoriesTest"/>-->
+            <class name="tests.HomeTest"/>
 <!--            <class name="tests.LoginTest"/>-->
-<!--            <class name="tests.MyAdsAndProfileTest"/>-->
+            <class name="tests.MyAdsAndProfileTest"/>
 <!--            <class name="tests.PostAnAdTest"/>-->
 <!--            <class name="tests.RegisterTest"/>-->
         </classes>

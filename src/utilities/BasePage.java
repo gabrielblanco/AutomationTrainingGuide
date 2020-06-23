@@ -1,4 +1,4 @@
-package pages;
+package utilities;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -17,13 +17,13 @@ public class BasePage {
     }
 
     // Get the base page URL
-    public void getBaseUrl(String url) {
-        try{
-            driver.get(url);
-        } catch (Exception e){
-            System.out.println("Unable to find the specified URL: " + e.toString());
-        }
-    }
+//    public void getBaseUrl(String url) {
+//        try{
+//            driver.get(url);
+//        } catch (Exception e){
+//            System.out.println("Unable to find the specified URL: " + e.toString());
+//        }
+//    }
 
     // This method will type some text into a valid web element.
     public boolean typeOnElement(WebElement element, String text)

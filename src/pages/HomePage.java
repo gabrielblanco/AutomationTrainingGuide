@@ -4,15 +4,19 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
-import java.lang.reflect.Array;
+import utilities.BasePage;
 import java.util.ArrayList;
 import java.util.List;
 
 public class HomePage extends BasePage {
 
+    // Web driver
+    WebDriver driver;
+
+    // Instances
+    NavigationPage navigationPage;
+
     // Home page locators
-    @FindBy(tagName = "h3") WebElement categoriesTitle;
     @FindBy(id = "ctl00_Main_CategoryBrowser_TopCategoryList_ctl00_TopCategoryButton") WebElement antiquesCatTitle;
     @FindBy(id = "ctl00_Main_CategoryBrowser_TopCategoryList_ctl01_TopCategoryButton") WebElement artsCatTitle;
     @FindBy(id = "ctl00_Main_CategoryBrowser_TopCategoryList_ctl02_TopCategoryButton") WebElement autoCatTitle;
@@ -26,18 +30,14 @@ public class HomePage extends BasePage {
     @FindBy(id = "ctl00_LoginView_LoginLink") WebElement loginLink;
     @FindBy(id = "ctl00_LoginView_RegisterLink") WebElement registerLink;
 
-    // Top menu locators
-    @FindBy(xpath = "// span[@id='ctl00_SecondBar_SiteMapPath']//span[3]") WebElement tabTitle;
-    @FindBy(id = "ctl00_TopMenuRepeater_ctl00_MenuLink") WebElement homeLink;
-    @FindBy(id = "ctl00_TopMenuRepeater_ctl01_MenuLink") WebElement postAndAdLink;
-    @FindBy(id = "ctl00_TopMenuRepeater_ctl02_MenuLink") WebElement myAdsAndProfileLink;
-
     List<WebElement> categories = new ArrayList<>();
 
     // Constructor method
     public HomePage (WebDriver driver) {
         super(driver);
+        this.driver = driver;
         PageFactory.initElements(driver, this);
+        navigationPage = new NavigationPage(driver);
         categories.add(antiquesCatTitle);
         categories.add(artsCatTitle);
         categories.add(autoCatTitle);
@@ -50,17 +50,14 @@ public class HomePage extends BasePage {
     // Verifies if the main web elements have already loaded
     public boolean verifyLoads(){
         try {
-            return (waitForElementVisible(categoriesTitle)
-                    && waitForElementEnabled(antiquesCatTitle)
+            return (waitForElementEnabled(antiquesCatTitle)
                     && waitForElementEnabled(artsCatTitle)
                     && waitForElementEnabled(autoCatTitle)
                     && waitForElementEnabled(electronicsCatTitle)
                     && waitForElementEnabled(gardenCatTitle)
                     && waitForElementEnabled(homeCatTitle)
                     && waitForElementEnabled(musicCatTitle)
-                    && waitForElementEnabled(homeLink)
-                    && waitForElementEnabled(postAndAdLink)
-                    && waitForElementEnabled(myAdsAndProfileLink));
+                    && navigationPage.verifyLoad());
         } catch (Exception e) {
             System.out.println("Some elements are not visible yet. \n" + e);
             return false;
@@ -77,11 +74,6 @@ public class HomePage extends BasePage {
         }
     }
 
-    // Returns the categories title
-    public String getPageTitle(){
-        return getTextFromElement(categoriesTitle);
-    }
-
     // Clicks over the login link.
     public LoginPage clickOnLogin(){
         clickOnElement(loginLink);
@@ -95,26 +87,24 @@ public class HomePage extends BasePage {
     }
 
     // Clicks over the Home menu item
-    public void clickOnHome(){
-        clickOnElement(homeLink);
+    public HomePage clickOnHome(){
+        navigationPage.goToHome();
+        return new HomePage(driver);
     }
 
     // Clicks over the Post An Ad menu item
     public PostAnAdPage clickOnPostAnAd(){
-        clickOnElement(postAndAdLink);
+        navigationPage.goToPostAnAdd();
         return new PostAnAdPage(driver);
     }
 
     // Clicks over the My Ads & Profile menu item
     public MyAdsAndProfilePage clickOnMyAdsAndProfile(){
-        clickOnElement(myAdsAndProfileLink);
+        navigationPage.goToMyAdsAndProfile();
         return new MyAdsAndProfilePage(driver);
     }
 
-    public String getTabTitle(){
-        return getTextFromElement(tabTitle);
-    }
-
+    // Clicks over an specific category
     public CategoriesPage clickOnCategory(String category) {
         for (WebElement cat : categories) {
             if (category.equals(getTextFromElement(cat))) {

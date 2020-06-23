@@ -4,8 +4,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utilities.BasePage;
 
-public class LoginPage extends BasePage{
+public class LoginPage extends BasePage {
 
     // Login view locators
     @FindBy(tagName = "h2") WebElement loginTitle;
@@ -27,15 +28,13 @@ public class LoginPage extends BasePage{
     }
 
     // Try to make a login
-    public HomePage logIn(String user, String pass){
+    public void logIn(String user, String pass){
         try {
             typeOnElement(userNameInput, user);
             typeOnElement(userPasswordInput, pass);
             clickOnElement(loginBtn);
-            return new HomePage(driver);
         } catch (Exception e) {
             System.out.println("Unable to complete the login. \n" + e);
-            return null;
         }
     }
 

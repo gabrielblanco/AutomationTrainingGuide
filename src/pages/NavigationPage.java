@@ -4,8 +4,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utilities.BasePage;
 
 public class NavigationPage extends BasePage {
+
+    // Web driver
+    WebDriver driver;
 
     // Web elements
     @FindBy(id = "ctl00_TopMenuRepeater_ctl00_MenuLink") WebElement homeLink;
@@ -15,6 +19,7 @@ public class NavigationPage extends BasePage {
     // Constructor method
     public NavigationPage(WebDriver driver) {
         super(driver);
+        this.driver =  driver;
         PageFactory.initElements(driver, this);
     }
 

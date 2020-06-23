@@ -6,6 +6,7 @@ import org.testng.annotations.*;
 import pages.HomePage;
 import pages.LoginPage;
 import pages.MyAdsAndProfilePage;
+import utilities.BaseTest;
 
 public class MyAdsAndProfileTest extends BaseTest {
 
@@ -31,10 +32,10 @@ public class MyAdsAndProfileTest extends BaseTest {
 
     // Sets the driver up
     @BeforeMethod
-    @Parameters({"baseUrl", "browserType", "executionType"})
-    void setUp(String baseUrl, String browserType, String executionType){
+    @Parameters({"baseUrl", "browserType", "executionType", "nodeUrl"})
+    void setUp(String baseUrl, String browserType, String executionType, String nodeUrl){
         System.out.println("Creating Driver");
-        driver = createDriver(baseUrl, executionType, browserType);
+        driver = createDriver(baseUrl, executionType, browserType, nodeUrl);
         homePage = new HomePage(driver);
         loginPage = homePage.clickOnLogin();
         myAdsAndProfilePage = homePage.clickOnMyAdsAndProfile();
